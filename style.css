@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  background-color: #fafafa;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+}
+
+:root {
+  --red: #ea5454;
+  --cyan: #44d3d2;
+  --yellow: #fcae4a;
+  --blue: #549ef2;
+  --dark-blue: #4d4f62;
+}
+
+.text-subtitle {
+  color: var(--dark-blue);
+  font-family: Poppins;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.01044rem;
+}
+
+.text-heading {
+  color: var(--dark-blue);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.01044rem;
+}
+
+.text-paragraph {
+  color: var(--dark-blue);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5625rem; /* 166.667% */
+  letter-spacing: 0.0065rem;
+  opacity: 0.5;
+}
+
+.text-card-heading {
+  color: var(--dark-blue);
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text-card-paragraph {
+  color: var(--dark-blue);
+  font-family: Poppins;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4375rem;
+  letter-spacing: 0.00563rem;
+  opacity: 0.5;
+}
+
+article {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.introduction {
+  max-width: 33.75rem;
+  margin: 0 auto;
+}
+
+.cards {
+  max-width: 19.43rem;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.56rem;
+  margin-top: 4.75rem;
+}
+
+.wrapper {
+  padding: 5rem 2rem;
+}
+
+.mt-08 {
+  margin-top: 0.8rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+article img {
+  width: 3.5625rem;
+  height: 3.5625rem;
+  align-self: flex-end;
+}
+
+.decorative-border {
+  height: 0.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-cyan {
+  background-color: var(--cyan);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+@media (min-width: 70rem) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 70rem;
+    margin: 4 auto;
+    grid-template-areas:
+      ". team-builder ."
+      "supervisor team-builder calculator"
+      "supervisor karma calculator"
+      ". karma .";
+  }
+
+  .card-supervisor {
+    grid-area: supervisor;
+  }
+
+  .card-team-builder {
+    grid-area: team-builder;
+  }
+
+  .card-karma {
+    grid-area: karma;
+  }
+
+  .card-calculator {
+    grid-area: calculator;
+  }
+
+  article {
+    max-width: 22rem;
+  }
+
+  article img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .text-subtitle {
+    font-size: 2.25rem;
+  }
+
+  .text-heading {
+    font-size: 2.25rem;
+  }
+
+  .text-paragraph {
+    font-size: 0.9375rem;
+    line-height: 1.875rem;
+  }
+}
